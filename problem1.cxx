@@ -23,14 +23,14 @@ int main(){
 
 void fill(double* p, const int N){
     for(int i=0; i<N; i++){
-        p[i]=rand();
+        p[i]=rand()/double(RAND_MAX); // wenn man Werte zwischen 0 und 1 haben will
     //cout<<p[i]<<endl;
     }
 }
 
 void maxmin(const double* const p, const int N, double& max, double&min){
-    max=0; 
-    min=RAND_MAX;
+    max=p[0]; 
+    min=p[0];
     for (int i=0; i<N; i++){
     if (p[i]<min)
          min=p[i];
